@@ -1,0 +1,55 @@
+{
+    "name": "dastiii/crawlers",
+    "description": "",
+    "keywords": [
+        "dastiii",
+        "crawlers"
+    ],
+    "homepage": "https://github.com/dastiii/crawlers",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Tobias Schwarz",
+            "email": "mail@tobias-schwarz.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "fabpot/goutte": "^4.0",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dastiii\\Crawlers\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Dastiii\\Crawlers\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Dastiii\\Crawlers\\CrawlersServiceProvider"
+            ],
+            "aliases": {
+                "Crawlers": "Dastiii\\Crawlers\\CrawlersFacade"
+            }
+        }
+    }
+}
