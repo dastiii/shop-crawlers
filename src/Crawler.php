@@ -1,6 +1,6 @@
 <?php
 
-namespace dastiii\Crawlers;
+namespace Dastiii\Crawlers;
 
 use Goutte\Client;
 

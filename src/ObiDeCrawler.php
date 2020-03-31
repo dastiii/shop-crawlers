@@ -1,9 +1,9 @@
 <?php
 
-namespace dastiii\Crawlers;
+namespace Dastiii\Crawlers;
 
 use Symfony\Component\DomCrawler\Crawler as DomCrawler;
-use dastiii\Crawlers\Contracts\Crawler as CrawlerContract;
+use Dastiii\Crawlers\Contracts\Crawler as CrawlerContract;
 
 class ObiDeCrawler extends Crawler implements CrawlerContract
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace dastiii\Crawlers\Contracts;
+namespace Dastiii\Crawlers\Contracts;
 
 interface Crawler
 {
