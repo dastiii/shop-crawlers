@@ -66,7 +66,7 @@ abstract class Crawler
     public function getStatusCode(): ?int
     {
         if ($this->client) {
-            return $this->client->getResponse()->getStatus();
+            return $this->client->getInternalResponse()->getStatusCode();
         }
 
         return null;
