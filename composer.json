@@ -1,11 +1,11 @@
 {
-    "name": "dastiii/crawlers",
+    "name": "dastiii/shop-crawlers",
     "description": "",
     "keywords": [
         "dastiii",
         "crawlers"
     ],
-    "homepage": "https://github.com/dastiii/crawlers",
+    "homepage": "https://github.com/dastiii/shop-crawlers",
     "license": "MIT",
     "type": "library",
     "authors": [
@@ -42,14 +42,4 @@
     "config": {
         "sort-packages": true
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Dastiii\\Crawlers\\CrawlersServiceProvider"
-            ],
-            "aliases": {
-                "Crawlers": "Dastiii\\Crawlers\\CrawlersFacade"
-            }
-        }
-    }
 }
