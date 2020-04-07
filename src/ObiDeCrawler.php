@@ -159,4 +159,26 @@ class ObiDeCrawler extends Crawler implements CrawlerContract
             return '<unknown>';
         }
     }
+
+    public function getDatasheets()
+    {
+        try {
+            $datasheets = [];
+            $datasheetSource = $this->crawler->filter('h4.first-sheet > a');
+            $datasheetCount = $datasheetSource->count();
+
+            for ($i = 0; $i < $datasheetCount; $i++) {
+                $node = $datasheetSource->getNode($i);
+
+                $datasheets[] = [
+                    'name' => $node->textContent,
+                    'url' => $node->getAttribute('href')
+                ];
+            }
+
+            return $datasheets;
+        } catch (\Exception $e) {
+            return [];
+        }
+    }
 }
