@@ -57,7 +57,7 @@ class ObiDeCrawler extends Crawler implements CrawlerContract
     {
         try {
             return $this->crawler
-                ->filterXPath('//strong[@data-ui-name="ads.price.strong"]')
+                ->filterXPath('//span[@data-ui-name="ads.price.strong"]')
                 ->first()
                 ->text();
         } catch (\Exception $e) {
@@ -83,6 +83,7 @@ class ObiDeCrawler extends Crawler implements CrawlerContract
 
     public function getProductStock() : ?string
     {
+        // Does not work anymore.
         try {
             return trim(
                 $this->crawler
@@ -160,7 +161,7 @@ class ObiDeCrawler extends Crawler implements CrawlerContract
         }
     }
 
-    public function getDatasheets()
+    public function getDatasheets(): array
     {
         try {
             $datasheets = [];
