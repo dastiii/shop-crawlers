@@ -100,7 +100,7 @@ class ObiDeCrawler extends Crawler implements CrawlerContract
     {
         try {
             return $this->crawler
-                ->filter('.overview__available p.marg_t5.green')
+                ->filter('.overview__available .overview__available-list .text-bold')
                 ->first()
                 ->text();
         } catch (\Exception $e) {
@@ -114,7 +114,7 @@ class ObiDeCrawler extends Crawler implements CrawlerContract
             return implode(
                 '; ',
                 $this->crawler
-                    ->filter('.overview__available .overview__available-list')
+                    ->filter('.overview__available ol.overview__available-list')
                     ->children()
                     ->each(function (DomCrawler $node, $i) {
                         return $node->text();
