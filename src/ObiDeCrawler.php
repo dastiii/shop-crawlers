@@ -101,7 +101,7 @@ class ObiDeCrawler extends Crawler implements CrawlerContract
         try {
             return $this->crawler
 //                ->filter('.overview__available .overview__available-list .text-bold')
-                ->filter('.overview__available.marg_b5 div.tw-font-bold')
+                ->filter('.overview__available div.tw-font-bold')
                 ->first()
                 ->text();
         } catch (\Exception $e) {
