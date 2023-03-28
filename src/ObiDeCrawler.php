@@ -65,6 +65,37 @@ class ObiDeCrawler extends Crawler implements CrawlerContract
         }
     }
 
+    public function getProductBasePrice() : ?string
+    {
+        try {
+            return $this->crawler
+                ->filter('.buybox div.optional-hidden.font-xs.text-right')
+                ->first()
+                ->text();
+        } catch (\Exception $e) {
+            return null;
+        }
+    }
+
+    public function getProductContents(): ?string
+    {
+        $basePrice = $this->getProductBasePrice();
+        $price = $this->getProductPrice();
+        
+        if ($basePrice === null || $price === null) return null;
+
+        $parts = explode('/', $basePrice);
+
+        if (count($parts) !== 2) return null;
+
+        $basePrice = number_format(floatval(str_replace(',', '.', trim(str_replace('€', '', $parts[0])))), 2);
+        $price = number_format(floatval(str_replace(',', '.', $price)), 2);
+        $basePriceUnit = trim($parts[1]);
+        $contents = number_format($price / $basePrice, 2);
+
+        return $contents." ".$basePriceUnit;
+    }
+
     public function getProductNumber() : ?string
     {
         try {

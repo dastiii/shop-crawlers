@@ -11,6 +11,7 @@ interface Crawler
 
     public function getProductName();
     public function getProductPrice();
+    public function getProductBasePrice();
     public function getProductNumber();
     public function getProductStock();
     public function getProductInStorePlacement();
