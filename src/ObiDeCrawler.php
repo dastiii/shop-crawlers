@@ -101,7 +101,7 @@ class ObiDeCrawler extends Crawler implements CrawlerContract
         try {
             return substr(
                 $this->crawler
-                    ->filterXPath('//p[@data-ui-name="ads.description-text.article-number.p"]')
+                    ->filter('section.overview__description span.article-number')
                     ->first()
                     ->text(),
                 8,
